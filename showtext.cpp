@@ -1,0 +1,35 @@
+#include "showtext.h"
+#include "ui_showtext.h"
+
+ShowText::ShowText(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::ShowText)
+{
+
+    ui->setupUi(this);
+    ui->textOutput->setText(this->text);
+}
+
+ShowText::~ShowText()
+{
+    delete ui;
+}
+
+
+/**
+ * @brief ShowText::getText
+ * Getter
+ * @return
+ */
+QString ShowText::getText(){
+    return this->text;
+}
+
+/**
+ * @brief ShowText::setText
+ * Setter
+ * @param s
+ */
+void ShowText::setText(QString s){
+    this->text = s;
+}
